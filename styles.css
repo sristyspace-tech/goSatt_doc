@@ -1,0 +1,309 @@
+/* SristySpace — shared styles
+   Palette extends the GoSatt app itself: deep-space navy + cyan glow.
+   Amber is the secondary accent (the QFH small-loop colour). */
+
+:root {
+  --bg: #050A1A;
+  --panel: #0B1330;
+  --panel-2: #101A3E;
+  --border: #1B2547;
+  --ink: #E8EDF8;
+  --dim: #8B96B8;
+  --cyan: #4FD8EA;
+  --cyan-soft: rgba(79, 216, 234, 0.14);
+  --amber: #FFB65C;
+  --radius: 12px;
+  --maxw: 880px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Noto Sans Tamil", "Noto Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Nav ---------- */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.wordmark {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.wordmark .dot { color: var(--cyan); }
+
+.nav-links { display: flex; gap: 22px; }
+.nav-links a {
+  color: var(--dim);
+  text-decoration: none;
+  font-size: 14.5px;
+}
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--cyan); }
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 40px 0 8px;
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--cyan);
+  margin-bottom: 14px;
+}
+
+h1 {
+  font-size: clamp(30px, 6vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 14px;
+  color: #F4F7FE;
+}
+
+.lede {
+  color: var(--dim);
+  font-size: clamp(15.5px, 2.5vw, 17.5px);
+  max-width: 560px;
+  margin: 0 auto 26px;
+}
+
+/* Pass-arc: the sky-view motif from the GoSatt tracker.
+   Dashed full arc = the below-horizon tails; solid clipped arc = the visible pass. */
+.arc {
+  display: block;
+  width: min(560px, 92%);
+  margin: 4px auto 0;
+}
+
+@keyframes satPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.sat-dot { animation: satPulse 2.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .sat-dot { animation: none; }
+}
+
+/* ---------- Buttons ---------- */
+.btn-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 26px 0 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 48px;
+  line-height: 1.3;
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: #04121C;
+}
+.btn-primary:hover, .btn-primary:focus-visible {
+  background: #6BE2F1;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--ink);
+  background: var(--panel);
+}
+.btn-secondary:hover, .btn-secondary:focus-visible {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.btn-note {
+  color: var(--dim);
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* ---------- Sections ---------- */
+section { padding: 44px 0 8px; }
+
+h2 {
+  font-size: clamp(21px, 3.6vw, 26px);
+  margin: 0 0 18px;
+  color: #F4F7FE;
+  letter-spacing: -0.01em;
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+/* ---------- Cards / feature grid ---------- */
+.grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 620px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 16.5px;
+  color: var(--cyan);
+}
+.card p {
+  margin: 0;
+  color: var(--dim);
+  font-size: 14.5px;
+}
+
+/* ---------- Product spotlight (landing) ---------- */
+.spotlight {
+  background: linear-gradient(160deg, var(--panel) 0%, var(--panel-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px 26px;
+  text-align: center;
+}
+.spotlight .app-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #F4F7FE;
+  margin: 0 0 6px;
+}
+.spotlight .app-name .tt { color: var(--cyan); }
+.spotlight p { color: var(--dim); max-width: 520px; margin: 0 auto 20px; }
+
+/* ---------- Install steps ---------- */
+.steps { counter-reset: step; padding: 0; margin: 0; list-style: none; }
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 22px 52px;
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0; top: 0;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--cyan-soft);
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 16.5px; top: 38px; bottom: 4px;
+  width: 1px;
+  background: var(--border);
+}
+.steps .ta {
+  display: block;
+  color: var(--ink);
+  font-size: 15.5px;
+  margin-bottom: 2px;
+}
+.steps .en {
+  display: block;
+  color: var(--dim);
+  font-size: 13.5px;
+}
+
+/* ---------- Callout ---------- */
+.callout {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--amber);
+  border-radius: 8px;
+  padding: 16px 20px;
+  color: var(--dim);
+  font-size: 14.5px;
+}
+.callout strong { color: var(--ink); }
+.callout a { color: var(--cyan); }
+
+/* ---------- Prose (privacy page) ---------- */
+.prose h2 {
+  font-size: 19px;
+  margin: 34px 0 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.prose section:first-of-type h2 { border-top: none; padding-top: 0; }
+.prose p, .prose li { font-size: 15.5px; }
+.prose ul { padding-left: 20px; }
+.prose li { margin-bottom: 8px; }
+.prose a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(79,216,234,0.35); }
+.prose a:hover { border-bottom-color: var(--cyan); }
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 56px;
+  border-top: 1px solid var(--border);
+  padding: 26px 0 40px;
+  color: var(--dim);
+  font-size: 14px;
+}
+footer .foot-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+footer a { color: var(--dim); text-decoration: none; }
+footer a:hover, footer a:focus-visible { color: var(--cyan); }
+
+a:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}

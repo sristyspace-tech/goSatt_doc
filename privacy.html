@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoSatt — Privacy Policy</title>
+<meta name="description" content="GoSatt privacy policy: your location and sensor data are processed entirely on your device and never transmitted.">
+<meta name="theme-color" content="#050A1A">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap prose">
+
+  <nav>
+    <a class="wordmark" href="index.html">Sristy<span class="dot">Space</span></a>
+    <div class="nav-links">
+      <a href="gosatt.html">GoSatt</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+
+  <header class="hero" style="text-align:left; padding-bottom:0;">
+    <span class="eyebrow">GoSatt · by SristySpace</span>
+    <h1 style="font-size:34px;">Privacy Policy</h1>
+    <p style="color:var(--dim); font-size:14px; margin:0;">Last updated: August 13, 2026</p>
+  </header>
+
+  <div class="callout" style="border-left-color: var(--cyan); margin: 28px 0 8px;">
+    <strong>The short version:</strong> GoSatt works out which satellites are
+    overhead using your phone's location and motion sensors — entirely on your
+    device. That information never leaves your phone. The only thing GoSatt
+    sends over the internet is a request for a public satellite orbital-data
+    file; that request carries nothing about you.
+  </div>
+
+  <section>
+    <h2>Information GoSatt Uses</h2>
+    <p>GoSatt needs a few pieces of information from your device to do its job.
+       All of it is processed locally, and none of it is transmitted anywhere:</p>
+    <ul>
+      <li><strong>Location (precise and approximate).</strong> Used to calculate
+          which satellites are currently visible from where you're standing, and
+          to show pass predictions for your position.</li>
+      <li><strong>Device orientation and motion</strong> (compass and
+          accelerometer). Used to align the sky view with the direction you're
+          pointing your phone.</li>
+      <li><strong>Favourited satellites.</strong> Saved in a file on your device
+          so your list persists between sessions. This list is never uploaded.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What GoSatt Sends Over the Internet</h2>
+    <p>GoSatt periodically downloads a public satellite catalogue (orbital data
+       used to calculate positions) from a GitHub-hosted mirror of publicly
+       available Celestrak data. This request does not include your location,
+       device identifiers, or any other personal information — it's the same
+       file for every user, regardless of who's asking.</p>
+  </section>
+
+  <section>
+    <h2>What GoSatt Doesn't Do</h2>
+    <ul>
+      <li>No account or sign-in is required or offered.</li>
+      <li>No advertising, and no advertising identifiers are used.</li>
+      <li>No analytics or tracking SDKs are included in the app.</li>
+      <li>No data is shared with, or sold to, third parties — because none is
+          collected off your device in the first place.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Data Retention and Your Control</h2>
+    <p>Since GoSatt doesn't transmit or store your data on any server, there's
+       nothing for us to retain. Uninstalling the app removes everything it
+       stored locally, including your favourites and cached catalogue data.</p>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>GoSatt is a general-audience tool and isn't directed at children. We
+       don't knowingly collect information from children.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>If this policy changes, the update will be posted on this page with a
+       revised "last updated" date above.</p>
+  </section>
+
+  <footer>
+    <div class="foot-row">
+      <span>© 2026 SristySpace</span>
+      <span>
+        Questions? <a href="mailto:dev@sristyspace.com">dev@sristyspace.com</a>
+      </span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

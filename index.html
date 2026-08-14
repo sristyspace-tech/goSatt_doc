@@ -3,138 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoSatt — Privacy Policy</title>
-<style>
-  :root {
-    --bg: #050A1A;
-    --panel: #0B1330;
-    --text: #D7DEEE;
-    --text-dim: #8B96B8;
-    --accent: #4FD8EA;
-    --border: #1B2547;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 64px 24px 96px;
-  }
-  header { margin-bottom: 40px; }
-  .eyebrow {
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 12px;
-    color: var(--accent);
-    font-weight: 600;
-    margin: 0 0 12px;
-  }
-  h1 {
-    font-size: 34px;
-    margin: 0 0 8px;
-    color: #F2F5FC;
-    letter-spacing: -0.01em;
-  }
-  .updated {
-    color: var(--text-dim);
-    font-size: 14px;
-    margin: 0;
-  }
-  .callout {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 8px;
-    padding: 20px 24px;
-    margin: 32px 0 40px;
-    font-size: 16px;
-  }
-  .callout p { margin: 0; }
-  .callout strong { color: #F2F5FC; }
-  h2 {
-    font-size: 20px;
-    color: #F2F5FC;
-    margin: 40px 0 12px;
-    padding-top: 8px;
-    border-top: 1px solid var(--border);
-  }
-  section:first-of-type h2 { border-top: none; padding-top: 0; }
-  p, li { font-size: 15.5px; color: var(--text); }
-  ul { padding-left: 20px; }
-  li { margin-bottom: 8px; }
-  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(79,216,234,0.35); }
-  a:hover { border-bottom-color: var(--accent); }
-  footer {
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    color: var(--text-dim);
-    font-size: 14px;
-  }
-</style>
+<title>SristySpace — Satellite tools from Tamil Nadu</title>
+<meta name="description" content="SristySpace builds satellite tools and open hardware guides from Tamil Nadu. Download GoSatt — the free satellite finder and antenna builder app.">
+<meta name="theme-color" content="#050A1A">
+<meta property="og:title" content="SristySpace — Satellite tools from Tamil Nadu">
+<meta property="og:description" content="Download GoSatt — find satellites overhead, track them live, and build your own antenna.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <p class="eyebrow">GoSatt · by SristySpace</p>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: August 13, 2026</p>
+
+  <nav>
+    <a class="wordmark" href="index.html">Sristy<span class="dot">Space</span></a>
+    <div class="nav-links">
+      <a href="gosatt.html">GoSatt</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow" lang="ta">வானத்தை நோக்கி</span>
+    <h1>Satellite tools, built under<br>the Tamil Nadu sky.</h1>
+    <p class="lede">SristySpace makes it simple to find the satellites passing over your
+      head — and to build the hardware that hears them.</p>
+
+    <!-- The pass arc: same motif as GoSatt's sky tracker.
+         Dashed = below-horizon approach/descent tails, solid = the visible pass. -->
+    <svg class="arc" viewBox="0 0 600 250" aria-hidden="true" role="presentation">
+      <defs>
+        <clipPath id="aboveHorizon"><rect x="0" y="0" width="600" height="200"/></clipPath>
+      </defs>
+      <line x1="0" y1="200" x2="600" y2="200" stroke="#1B2547" stroke-width="1.5"/>
+      <path d="M 0 240 Q 300 -60 600 240" fill="none" stroke="#2A3760"
+            stroke-width="2" stroke-dasharray="3 7"/>
+      <path d="M 0 240 Q 300 -60 600 240" fill="none" stroke="#4FD8EA"
+            stroke-width="2.5" clip-path="url(#aboveHorizon)"/>
+      <circle class="sat-dot" cx="300" cy="90" r="6" fill="#4FD8EA"/>
+      <circle cx="300" cy="90" r="12" fill="none" stroke="#4FD8EA"
+              stroke-opacity="0.35" stroke-width="1.5"/>
+    </svg>
   </header>
 
-  <div class="callout">
-    <p><strong>The short version:</strong> GoSatt works out which satellites are overhead using your phone's location and motion sensors — entirely on your device. That information never leaves your phone. The only thing GoSatt sends over the internet is a public satellite orbital-data file; that request carries nothing about you.</p>
-  </div>
-
   <section>
-    <h2>Information GoSatt Uses</h2>
-    <p>GoSatt needs a few pieces of information from your device to do its job. All of it is processed locally, and none of it is transmitted anywhere:</p>
-    <ul>
-      <li><strong>Location (precise and approximate).</strong> Used to calculate which satellites are currently visible from where you're standing, and to show your position on the sky-tracking view.</li>
-      <li><strong>Device orientation and motion</strong> (compass and accelerometer). Used to align the sky view with the direction you're pointing your phone.</li>
-      <li><strong>Favourited satellites.</strong> Saved in a file on your device so your list persists between sessions. This list is never uploaded.</li>
-    </ul>
+    <div class="spotlight">
+      <p class="app-name">Go<span class="tt">Satt</span></p>
+      <p>Search 16,000+ satellites, get pass timings for your exact location,
+         point your phone at the sky to find them — and build the antenna
+         to receive them. Free, no sign-in, no ads.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary"
+           href="https://github.com/sristyspace-tech/gosatt-releases/releases/latest/download/gosatt.apk">
+          Download for Android</a>
+        <a class="btn btn-secondary" href="gosatt.html">Learn more</a>
+      </div>
+      <p class="btn-note">Free · Android APK · Coming soon to Google Play</p>
+    </div>
   </section>
 
   <section>
-    <h2>What GoSatt Sends Over the Internet</h2>
-    <p>GoSatt periodically downloads a public satellite catalogue (orbital data used to calculate positions) from a GitHub-hosted mirror of publicly available Celestrak data. This request does not include your location, device identifiers, or any other personal information — it's the same file for every user, regardless of who's asking.</p>
-  </section>
-
-  <section>
-    <h2>What GoSatt Doesn't Do</h2>
-    <ul>
-      <li>No account or sign-in is required or offered.</li>
-      <li>No advertising, and no advertising identifiers are used.</li>
-      <li>No analytics or tracking SDKs are included in the app.</li>
-      <li>No data is shared with, or sold to, third parties — because none is collected off your device in the first place.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Data Retention and Your Control</h2>
-    <p>Since GoSatt doesn't transmit or store your data on any server, there's nothing for us to retain. Uninstalling the app removes everything it stored locally, including your favourites and cached catalogue data.</p>
-  </section>
-
-  <section>
-    <h2>Children's Privacy</h2>
-    <p>GoSatt is a general-audience tool and isn't directed at children. We don't knowingly collect information from children.</p>
-  </section>
-
-  <section>
-    <h2>Changes to This Policy</h2>
-    <p>If this policy changes, the update will be posted on this page with a revised "last updated" date above.</p>
+    <div class="section-label">What we're building</div>
+    <h2>From your phone screen to a dead star</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>GoSatt app</h3>
+        <p>A satellite finder made for receiving, not just watching — every
+           feature exists because we needed it for real passes.</p>
+      </div>
+      <div class="card">
+        <h3>Build guides</h3>
+        <p>Step-by-step antenna builds — the V-dipole and the QFH — tested
+           against real weather-satellite decodes. Coming to this site soon.</p>
+      </div>
+      <div class="card">
+        <h3>The series</h3>
+        <p>A radio telescope built in public, from zero background to
+           detecting a pulsar. Follow along on YouTube.</p>
+      </div>
+      <div class="card">
+        <h3>Open data</h3>
+        <p>Our satellite catalogue pipeline is a public GitHub mirror of
+           Celestrak data — free for anyone to use.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    Questions about this policy? Contact <a href="mailto:dev@sristyspace.com">dev@sristyspace.com</a>.
+    <div class="foot-row">
+      <span>© 2026 SristySpace</span>
+      <span>
+        <a href="mailto:dev@sristyspace.com">dev@sristyspace.com</a> ·
+        <a href="https://instagram.com/schrodingertamil" rel="noopener">Instagram</a> ·
+        <a href="#" data-todo="youtube-channel-url">YouTube</a> ·
+        <a href="privacy.html">Privacy</a>
+      </span>
+    </div>
   </footer>
+
 </div>
 </body>
 </html>
