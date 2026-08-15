@@ -1,17 +1,18 @@
-/* SristySpace — shared styles
-   Palette extends the GoSatt app itself: deep-space navy + cyan glow.
-   Amber is the secondary accent (the QFH small-loop colour). */
+/* SristySpace — shared styles (light mode)
+   Palette: soft blue-white background, deep teal-cyan + amber accents,
+   navy ink text. Same structure as the dark version, recalibrated for
+   contrast on a light background. */
 
 :root {
-  --bg: #050A1A;
-  --panel: #0B1330;
-  --panel-2: #101A3E;
-  --border: #1B2547;
-  --ink: #E8EDF8;
-  --dim: #8B96B8;
-  --cyan: #4FD8EA;
-  --cyan-soft: rgba(79, 216, 234, 0.14);
-  --amber: #FFB65C;
+  --bg: #F6F8FC;
+  --panel: #FFFFFF;
+  --panel-2: #EEF2FA;
+  --border: #E1E7F1;
+  --ink: #131A2E;
+  --dim: #5C6784;
+  --cyan: #0B8A9E;
+  --cyan-soft: rgba(11, 138, 158, 0.10);
+  --amber: #B5650A;
   --radius: 12px;
   --maxw: 880px;
 }
@@ -24,18 +25,18 @@ body {
   margin: 0;
   background-color: var(--bg);
   background-image:
-    radial-gradient(1.5px 1.5px at 40px 60px, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 120px 140px, rgba(255,255,255,0.35), transparent),
-    radial-gradient(2px 2px at 200px 40px, rgba(79,216,234,0.4), transparent),
-    radial-gradient(1px 1px at 260px 180px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1.5px 1.5px at 320px 90px, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 60px 200px, rgba(255,255,255,0.25), transparent),
-    radial-gradient(1px 1px at 350px 220px, rgba(79,216,234,0.3), transparent);
+    radial-gradient(1px 1px at 40px 60px, rgba(19,26,46,0.09), transparent),
+    radial-gradient(1px 1px at 120px 140px, rgba(19,26,46,0.06), transparent),
+    radial-gradient(1.5px 1.5px at 200px 40px, rgba(11,138,158,0.14), transparent),
+    radial-gradient(1px 1px at 260px 180px, rgba(19,26,46,0.05), transparent),
+    radial-gradient(1px 1px at 320px 90px, rgba(19,26,46,0.07), transparent),
+    radial-gradient(1px 1px at 60px 200px, rgba(19,26,46,0.05), transparent),
+    radial-gradient(1px 1px at 350px 220px, rgba(11,138,158,0.12), transparent);
   background-repeat: repeat;
   background-size: 400px 260px;
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Noto Sans Tamil", "Noto Sans", Helvetica, Arial, sans-serif;
+    "Noto Sans", Helvetica, Arial, sans-serif;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
@@ -97,7 +98,7 @@ h1 {
   line-height: 1.15;
   letter-spacing: -0.015em;
   margin: 0 0 14px;
-  color: #F4F7FE;
+  color: var(--ink);
 }
 
 .lede {
@@ -148,10 +149,11 @@ h1 {
 
 .btn-primary {
   background: var(--cyan);
-  color: #04121C;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(11, 138, 158, 0.28);
 }
 .btn-primary:hover, .btn-primary:focus-visible {
-  background: #6BE2F1;
+  background: #086F80;
 }
 
 .btn-secondary {
@@ -176,7 +178,7 @@ section { padding: 44px 0 8px; }
 h2 {
   font-size: clamp(21px, 3.6vw, 26px);
   margin: 0 0 18px;
-  color: #F4F7FE;
+  color: var(--ink);
   letter-spacing: -0.01em;
 }
 
@@ -204,6 +206,7 @@ h2 {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px 22px;
+  box-shadow: 0 1px 3px rgba(19, 26, 46, 0.04);
 }
 .card h3 {
   margin: 0 0 6px;
@@ -223,11 +226,12 @@ h2 {
   border-radius: 16px;
   padding: 30px 26px;
   text-align: center;
+  box-shadow: 0 2px 10px rgba(19, 26, 46, 0.05);
 }
 .spotlight .app-name {
   font-size: 26px;
   font-weight: 700;
-  color: #F4F7FE;
+  color: var(--ink);
   margin: 0 0 6px;
 }
 .spotlight .app-name .tt { color: var(--cyan); }
@@ -239,6 +243,8 @@ h2 {
   counter-increment: step;
   position: relative;
   padding: 0 0 22px 52px;
+  color: var(--ink);
+  font-size: 15.5px;
 }
 .steps li::before {
   content: counter(step);
@@ -261,17 +267,6 @@ h2 {
   left: 16.5px; top: 38px; bottom: 4px;
   width: 1px;
   background: var(--border);
-}
-.steps .ta {
-  display: block;
-  color: var(--ink);
-  font-size: 15.5px;
-  margin-bottom: 2px;
-}
-.steps .en {
-  display: block;
-  color: var(--dim);
-  font-size: 13.5px;
 }
 
 /* ---------- Callout ---------- */
@@ -298,30 +293,8 @@ h2 {
 .prose p, .prose li { font-size: 15.5px; }
 .prose ul { padding-left: 20px; }
 .prose li { margin-bottom: 8px; }
-.prose a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(79,216,234,0.35); }
+.prose a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(11,138,158,0.35); }
 .prose a:hover { border-bottom-color: var(--cyan); }
-
-/* ---------- Footer ---------- */
-footer {
-  margin-top: 56px;
-  border-top: 1px solid var(--border);
-  padding: 26px 0 40px;
-  color: var(--dim);
-  font-size: 14px;
-}
-footer .foot-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-footer a { color: var(--dim); text-decoration: none; }
-footer a:hover, footer a:focus-visible { color: var(--cyan); }
-
-a:focus-visible, .btn:focus-visible {
-  outline: 2px solid var(--cyan);
-  outline-offset: 3px;
-}
 
 /* ---------- Gallery ---------- */
 .gallery-grid {
@@ -343,6 +316,7 @@ a:focus-visible, .btn:focus-visible {
   color: inherit;
   display: block;
   width: 100%;
+  box-shadow: 0 1px 3px rgba(19, 26, 46, 0.04);
 }
 .gallery-item:hover, .gallery-item:focus-visible {
   border-color: var(--cyan);
@@ -376,15 +350,17 @@ a:focus-visible, .btn:focus-visible {
   text-align: center;
   color: var(--dim);
 }
-.gallery-empty svg { margin-bottom: 12px; opacity: 0.6; }
+.gallery-empty svg { margin-bottom: 12px; opacity: 0.7; }
 .gallery-empty p { margin: 0; font-size: 15px; }
 
-/* Lightbox */
+/* Lightbox — deliberately stays dark regardless of page theme;
+   photo viewers read better on a dark scrim either way, so these
+   colors are fixed rather than tied to the --ink/--dim variables. */
 .lightbox {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(2, 5, 14, 0.92);
+  background: rgba(5, 8, 20, 0.94);
   z-index: 100;
   align-items: center;
   justify-content: center;
@@ -395,14 +371,14 @@ a:focus-visible, .btn:focus-visible {
   max-width: min(900px, 92vw);
   max-height: 78vh;
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 .lightbox-caption {
   position: absolute;
   bottom: 28px;
   left: 0; right: 0;
   text-align: center;
-  color: var(--dim);
+  color: #B9C2D9;
   font-size: 14px;
   padding: 0 16px;
 }
@@ -410,12 +386,34 @@ a:focus-visible, .btn:focus-visible {
   position: absolute;
   top: 20px; right: 20px;
   background: none;
-  border: 1px solid var(--border);
-  color: var(--ink);
+  border: 1px solid rgba(255,255,255,0.28);
+  color: #FFFFFF;
   width: 44px; height: 44px;
   border-radius: 50%;
   font-size: 22px;
   cursor: pointer;
   line-height: 1;
 }
-.lightbox-close:hover, .lightbox-close:focus-visible { border-color: var(--cyan); color: var(--cyan); }
+.lightbox-close:hover, .lightbox-close:focus-visible { border-color: #4FD8EA; color: #4FD8EA; }
+
+/* ---------- Footer ---------- */
+footer {
+  margin-top: 56px;
+  border-top: 1px solid var(--border);
+  padding: 26px 0 40px;
+  color: var(--dim);
+  font-size: 14px;
+}
+footer .foot-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+footer a { color: var(--dim); text-decoration: none; }
+footer a:hover, footer a:focus-visible { color: var(--cyan); }
+
+a:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
