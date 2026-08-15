@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Kit — Parts &amp; Tools — SristySpace</title>
+<meta name="description" content="The exact parts and tools used to build the QFH and V-dipole antennas and SDR receive chain in this series.">
+<meta name="theme-color" content="#F6F8FC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="wordmark" href="index.html">Sristy<span class="dot">Space</span></a>
+    <div class="nav-links">
+      <a href="gosatt.html">GoSatt</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="parts.html">Build Kit</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Build Kit</span>
+    <h1>Everything you need to build</h1>
+    <p class="lede">The exact parts used in this series — antenna materials
+       and the SDR receive chain that turns them into images and data.</p>
+  </header>
+
+  <section>
+    <div class="callout">
+      <strong>Heads up:</strong> some links below are affiliate links —
+      using them costs you nothing extra and helps support this series.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">QFH Antenna</div>
+    <h2>Parts for the QFH build</h2>
+    <div class="grid">
+      <div class="card part-card">
+        <img src="images/parts/copper-wire-2mm.jpg" alt="2mm bare copper wire coil">
+        <div class="part-card-body">
+          <h3>2mm bare copper wire</h3>
+          <p>For the loop elements — the app's QFH calculator uses 2mm as its
+             reference gauge for all its measurements.</p>
+          <a class="part-link" href="https://link.amazon/B0iF4v8Db">Get this →</a>
+        </div>
+      </div>
+      <div class="card part-card">
+        <img src="images/parts/pvc-pipe.jpg" alt="25mm PVC pipe">
+        <div class="part-card-body">
+          <h3>25mm PVC pipe</h3>
+          <p>The support tube — the app calculates the minimum length for your
+             target frequency (typically 80cm or more).</p>
+          <a class="part-link" href="https://www.amazon.in/s?k=25mm+pvc+pipe" data-todo="affiliate-link">Get this →</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Coax cable (RG-58) 50 ohm</h3>
+        <p>The feedline carrying signal from the antenna down to your SDR.</p>
+        <a class="part-link" href="https://link.amazon/B057ioce6" data-todo="affiliate-link">Get this →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">V-Dipole Antenna</div>
+    <h2>Parts for the V-dipole build</h2>
+    <div class="grid">
+      <div class="card part-card">
+        <img src="images/parts/wire-3mm.jpg" alt="3mm copper wire coil">
+        <div class="part-card-body">
+          <h3>3mm wire or rod</h3>
+          <p>Two arms, cut to length for your target frequency — the app's
+             calculator gives you the exact measurement for each arm.</p>
+          <a class="part-link" href="https://link.amazon/B0blSQ464" data-todo="affiliate-link">Get this →</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Coax cable (RG-58) 50 ohm</h3>
+        <p>Same feedline role as the QFH build above.</p>
+        <a class="part-link" href="https://link.amazon/B057ioce6" data-todo="affiliate-link">Get this →</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">SDR Receive Chain</div>
+    <h2>What turns signal into image</h2>
+    <div class="grid">
+      <div class="card part-card">
+        <img src="images/parts/sdr-dongle.jpg" alt="NooElec NESDR SMArTee RTL-SDR dongle">
+        <div class="part-card-body">
+          <h3>RTL-SDR dongle</h3>
+          <p>The actual radio — plugs into your computer or Pi and does the
+             receiving. Look for one with an always-on bias-tee if you're
+             powering an LNA through the coax.</p>
+          <a class="part-link" href="https://link.amazon/B04WMCMiI">Get this →</a>
+        </div>
+      </div>
+      <div class="card part-card">
+        <img src="images/parts/lna.jpg" alt="Wideband low-noise amplifier">
+        <div class="part-card-body">
+          <h3>Wideband LNA</h3>
+          <p>Boosts the weak signal before it travels down the coax, right at
+             the antenna end of the chain.</p>
+          <a class="part-link" href="https://link.amazon/B0ddRyWpi">Get this →</a>
+        </div>
+      </div>
+      <div class="card part-card">
+        <img src="images/parts/fm-bandstop-filter.jpg" alt="Flamingo FM bandstop filter">
+        <div class="part-card-body">
+          <h3>FM bandstop filter</h3>
+          <p>Sits before the LNA and blocks strong local FM broadcast stations
+             from swamping your receiver.</p>
+          <a class="part-link" href="https://link.amazon/B04yQUzkf">Get this →</a>
+        </div>
+      </div>
+      <div class="card part-card">
+        <img src="images/parts/sma-jumper.jpg" alt="SMA male-to-female jumper cable">
+        <div class="part-card-body">
+          <h3>SMA male-to-female jumper</h3>
+          <p>Connects your coax feedline into the SDR's SMA input — a short
+             jumper, not the long antenna-to-receiver run.</p>
+          <a class="part-link" href="https://www.amazon.in/dp/B0CF58FLPF?tag=sristystore01-21">Get this →</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>NanoVNA</h3>
+        <p>For tuning and verifying your antenna is actually resonant on
+           your target frequency before you rely on it.</p>
+        <a class="part-link" href="https://www.amazon.in/s?k=nanovna" data-todo="affiliate-link">Get this →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-row">
+      <span>© 2026 SristySpace</span>
+      <span>
+        <a href="mailto:dev@sristyspace.com">dev@sristyspace.com</a> ·
+        <a href="https://instagram.com/schrodingertamil" rel="noopener">Instagram</a> ·
+        <a href="#" data-todo="youtube-channel-url">YouTube</a> ·
+        <a href="privacy.html">Privacy</a>
+      </span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
